@@ -1,7 +1,8 @@
-"""owens_maps_django URL Configuration
+"""
+URL configuration for django_portfolio project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.2/topics/http/urls/
+    https://docs.djangoproject.com/en/4.2/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -15,8 +16,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('imagetotext/', include('imagetotext.urls')),
     path('', include('homepage.urls')),
-]
+    path('esri_app/', include('esri_app.urls')),
+    path('file_manager/', include('file_manager.urls')),
+    path('text_to_speech/', include('texttospeech.urls')),
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
