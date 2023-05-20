@@ -23,9 +23,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('imagetotext/', include('imagetotext.urls')),
     path('', include('homepage.urls')),
-    path('esri_app/', include('esri_app.urls')),
+    # path('esri_app/', include('esri_app.urls')),
     path('file_manager/', include('file_manager.urls')),
-    path('text_to_speech/', include('texttospeech.urls')),
+    # path('text_to_speech/', include('texttospeech.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
