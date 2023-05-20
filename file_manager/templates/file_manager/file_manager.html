@@ -59,8 +59,8 @@
                             <a href="{% url 'download' file.id %}" class="btn btn-sm btn-primary">Download</a>
                             <a href="{% url 'delete' file.id %}" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this file?');">Delete</a>
                             <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#converterModal" data-fileid="{{ file.id }}">Convert</button>
-                            <a href="http://localhost:5173/index.html?file_id={{ file.id }}" class="btn btn-sm btn-info" target="_blank">View/Edit</a>
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="modal" data-target="#attributeModal" data-fileid="{{ file.id }}">View Attributes</button>
+                            <!-- <a href="http://localhost:5173/index.html?file_id={{ file.id }}" class="btn btn-sm btn-info" target="_blank">View/Edit</a>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="modal" data-target="#attributeModal" data-fileid="{{ file.id }}">View Attributes</button> -->
 
                         </td>
                     </tr>
@@ -90,11 +90,11 @@
             <div class="form-group">
                 <label for="output_format">Output Format</label>
                 <select class="form-control" name="output_format" id="output_format">
-                <option value="shp">ESRI Shapefile</option>
+                <!-- <option value="shp">ESRI Shapefile</option> -->
                 <option value="kml">KML</option>
                 <option value="geojson">GeoJSON</option>
                 <option value="gml">GML</option>
-                <option value="wkt">WKT</option>
+                <!-- <option value="wkt">WKT</option> -->
                 </select>
             </div>
             <button type="submit" class="btn btn-primary">Convert</button>
