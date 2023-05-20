@@ -32,12 +32,12 @@ ALLOWED_HOSTS = ['45.33.36.74', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
-    'texttospeech',
+    # 'texttospeech',
     'corsheaders',
     'rest_framework',
     'file_manager',
-    'geojson_viewer',
-    'esri_app',
+    # 'geojson_viewer',
+    # 'esri_app',
     'homepage',
     'imagetotext',
     'django.contrib.gis',
