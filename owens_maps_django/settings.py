@@ -33,8 +33,8 @@ ALLOWED_HOSTS = ['45.33.36.74', '127.0.0.1']
 
 INSTALLED_APPS = [
     # 'texttospeech',
-    'corsheaders',
-    'rest_framework',
+    # 'corsheaders',
+    # 'rest_framework',
     'file_manager',
     # 'geojson_viewer',
     # 'esri_app',
