@@ -32,7 +32,15 @@ ALLOWED_HOSTS = ['45.33.36.74', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
-    'homepage.apps.HomepageConfig',
+    'texttospeech',
+    'corsheaders',
+    'rest_framework',
+    'file_manager',
+    'geojson_viewer',
+    'esri_app',
+    'homepage',
+    'imagetotext',
+    'django.contrib.gis',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
