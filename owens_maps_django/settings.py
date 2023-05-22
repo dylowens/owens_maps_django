@@ -150,8 +150,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-GDAL_LIBRARY_PATH = '-L/usr/lib -lgdal'
-GEOS_LIBRARY_PATH = '-L/usr/lib/x86_64-linux-gnu -lgeos-3.7.1'
+GDAL_LIBRARY_PATH = '/usr/lib/libgdal.so'
+# GEOS_LIBRARY_PATH = '-L/usr/lib/x86_64-linux-gnu -lgeos-3.7.1'
 CORS_ALLOW_ALL_ORIGINS = True
 
 APPEND_SLASH = True
