@@ -24,60 +24,30 @@
     </header>
 
     <div class="container my-5">
-        <h2 class="text-center mb-4">Apps</h2>
         <div class="row">
-            <div class="col-md-4">
-                <a href="/imagetotext" class="text-decoration-none">
-                    <div class="card">
-                        <img src="{% static 'imagetotext.png' %}" class="card-img-top" alt="Project 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Image to Text</h5>
-                            <p class="card-text">An app that extracts text from images.</p>
-                            <a href="/imagetotext" class="btn btn-primary">View Project</a>
-                        </div>
-                    </div>
-                </a>
+            <!-- GIS Image -->
+            <div class="col-md-12 text-center mb-4">
+                <img src="{% static 'your_gis_image.png' %}" alt="GIS" style="max-width: 100%;">
             </div>
-            <!-- Add the geojson_viewer app card -->
-            <!-- <div class="col-md-4">
-                <a href="/geojson/upload" class="text-decoration-none">
-                    <div class="card">
-                        <img src="{% static 'geojson_viewer.png' %}" class="card-img-top" alt="GeoJSON Viewer">
-                        <div class="card-body">
-                            <h5 class="card-title">GeoJSON Viewer</h5>
-                            <p class="card-text">An app to upload and view GeoJSON files.</p>
-                            <a href="/geojson/upload" class="btn btn-primary">View Project</a>
-                        </div>
-                    </div>
-                </a>
-            </div> -->
-            <!-- Add the esri_app/webmap app card -->
-            <!-- <div class="col-md-4">
-                <a href="/esri_app/webmap" class="text-decoration-none">
-                    <div class="card">
-                        <img src="{% static 'esri_app.png' %}" class="card-img-top" alt="ESRI Webmap">
-                        <div class="card-body">
-                            <h5 class="card-title">ESRI Webmap</h5>
-                            <p class="card-text">An app to display ESRI webmaps.</p>
-                            <a href="/esri_app/webmap" class="btn btn-primary">View Project</a>
-                        </div>
-                    </div>
-                </a>
-            </div> -->
-            <!-- Add the file_manager app card -->
-            <div class="col-md-4">
-                <a href="/file_manager" class="text-decoration-none">
-                    <div class="card">
-                        <img src="{% static 'GIS_File_Manager.png' %}" class="card-img-top" alt="File Manager">
-                        <div class="card-body">
-                            <h5 class="card-title">File Manager</h5>
-                            <p class="card-text">An app to upload, convert, and download GIS files.</p>
-                            <a href="/file_manager" class="btn btn-primary">View Project</a>
-                        </div>
-                    </div>
-                </a>
+
+            <!-- Apps List -->
+            <div class="col-md-3">
+                <h2 class="text-center mb-4">Apps</h2>
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="/imagetotext">Image to Text</a></li>
+                    <li class="list-group-item"><a href="/file_manager">File Manager</a></li>
+                    <!-- Future projects -->
+                    <li class="list-group-item disabled">Future Project 1</li>
+                    <li class="list-group-item disabled">Future Project 2</li>
+                </ul>
             </div>
-            <!-- Add more projects as needed -->
+
+            <!-- Content -->
+            <div class="col-md-9">
+                <h2 class="text-center mb-4">Welcome</h2>
+                <p>This is a work in progress. More projects coming soon.</p>
+                <!-- Insert more content here -->
+            </div>
         </div>
     </div>
 
