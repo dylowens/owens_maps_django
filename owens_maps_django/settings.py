@@ -154,12 +154,12 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # USE IN PRODUCTION
-# GDAL_LIBRARY_PATH = '/usr/lib/libgdal.so'
-# GEOS_LIBRARY_PATH = '-L/usr/lib/x86_64-linux-gnu -lgeos-3.7.1'
+GDAL_LIBRARY_PATH = '/usr/lib/libgdal.so'
+GEOS_LIBRARY_PATH = '-L/usr/lib/x86_64-linux-gnu -lgeos-3.7.1'
 
 #owensmac local paths FOR DEVELOPMENT
-GDAL_LIBRARY_PATH = '/opt/homebrew/opt/gdal/lib/libgdal.dylib'
-GEOS_LIBRARY_PATH = '/opt/homebrew/opt/geos/lib/libgeos_c.dylib'
+# GDAL_LIBRARY_PATH = '/opt/homebrew/opt/gdal/lib/libgdal.dylib'
+# GEOS_LIBRARY_PATH = '/opt/homebrew/opt/geos/lib/libgeos_c.dylib'
 CORS_ALLOW_ALL_ORIGINS = True
 
 APPEND_SLASH = True
