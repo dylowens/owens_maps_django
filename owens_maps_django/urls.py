@@ -26,6 +26,7 @@ urlpatterns = [
     # path('esri_app/', include('esri_app.urls')),
     path('file_manager/', include('file_manager.urls')),
     # path('text_to_speech/', include('texttospeech.urls')),
+    path('portfolio/', include('portfolio.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

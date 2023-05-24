@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | OwensMaps</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container my-3">
+        <a href="/" class="btn btn-primary">Back to Homepage</a>
+    </div>
+    
+    <h2 class="text-center my-4">Static Maps</h2>
+
+    <div class="container">
+        <div class="row">
+            {% for work in works %}
+            <div class="col-md-4 my-3">
+                <div class="card">
+                    <img id="work{{work.id}}" src="{{ work.file.url }}" class="card-img-top" alt="{{ work.title }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ work.title }}</h5>
+                        <p>{{ work.description }}</p>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <button class="btn btn-primary btn-sm" onclick="openFullscreen('work{{work.id}}');">View Fullscreen</button>
+                            <a href="{{ work.file.url }}" download class="btn btn-secondary">Download</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+                <p class="text-center">No works to display at the moment.</p>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script src="{% static '/js/portfolio.js' %}"></script>
+</body>
+</html>
