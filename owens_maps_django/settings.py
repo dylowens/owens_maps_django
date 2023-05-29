@@ -138,7 +138,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
 
 # This is where Django will look for your static files
 STATICFILES_DIRS = [
-    '/var/www/owens_maps_django/staticfiles',
+    '/var/www/projects/owens_maps_django/staticfiles',
     os.path.join(BASE_DIR, 'homepage/static'),
 
 ]
