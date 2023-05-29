@@ -138,10 +138,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
 
 # This is where Django will look for your static files
 STATICFILES_DIRS = [
-    '/var/www/projects/owens_maps_django/static',
-    os.path.join(BASE_DIR, 'homepage/static'),
 
+    os.path.join(BASE_DIR, 'homepage/static'),
+    os.path.join(BASE_DIR, 'file_manager/static'),
+    os.path.join(BASE_DIR, 'portfolio/static'),
+    os.path.join(BASE_DIR, 'imagetotext/static'),
 ]
+
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
