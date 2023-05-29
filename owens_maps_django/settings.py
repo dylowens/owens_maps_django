@@ -142,7 +142,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'homepage/static'),
 
 ]
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Default primary key field type
@@ -163,3 +163,19 @@ GDAL_LIBRARY_PATH = '/usr/lib/libgdal.so'
 CORS_ALLOW_ALL_ORIGINS = True
 
 APPEND_SLASH = True
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': BASE_DIR / 'debug.log',
+        },
+    },
+    'root': {
+        'handlers': ['file'],
+        'level': 'DEBUG',
+    },
+}
