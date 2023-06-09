@@ -33,13 +33,9 @@ ALLOWED_HOSTS = ['66.175.216.220', '45.33.36.74', '127.0.0.1',
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'portfolio',
-    # 'texttospeech',
-    # 'corsheaders',
-    # 'rest_framework',
     'file_manager',
-    # 'geojson_viewer',
-    # 'esri_app',
     'homepage',
     'imagetotext',
     'django.contrib.gis',
@@ -49,6 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 'corsheaders',
+    # 'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -86,6 +84,8 @@ WSGI_APPLICATION = 'owens_maps_django.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+
+# Production database
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -96,6 +96,19 @@ DATABASES = {
         'PORT': '',
     }
 }
+
+
+# # Local database
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+#         'NAME': 'db.sqlite3',                      # Or path to database file if using sqlite3.
+#         'USER': '',                      # Not used with sqlite3.
+#         'PASSWORD': '',                  # Not used with sqlite3.
+#         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+#         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+#     }
+# }
 
 
 # Password validation
@@ -139,17 +152,17 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
 
-
 # This is where Django will look for your static files
 STATICFILES_DIRS = [
-
+    
     os.path.join(BASE_DIR, 'homepage/static'),
     os.path.join(BASE_DIR, 'file_manager/static'),
     os.path.join(BASE_DIR, 'portfolio/static'),
     os.path.join(BASE_DIR, 'imagetotext/static'),
 ]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 
 # Default primary key field type
@@ -162,27 +175,15 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # USE IN PRODUCTION
 GDAL_LIBRARY_PATH = '/usr/lib/libgdal.so'
-# GEOS_LIBRARY_PATH = '-L/usr/lib/x86_64-linux-gnu -lgeos-3.7.1'
+GEOS_LIBRARY_PATH = '-L/usr/lib/x86_64-linux-gnu -lgeos-3.7.1'
 
 #owensmac local paths FOR DEVELOPMENT
 # GDAL_LIBRARY_PATH = '/opt/homebrew/opt/gdal/lib/libgdal.dylib'
 # GEOS_LIBRARY_PATH = '/opt/homebrew/opt/geos/lib/libgeos_c.dylib'
+
+
 CORS_ALLOW_ALL_ORIGINS = True
 
 APPEND_SLASH = True
 
-# LOGGING = {
-#     'version': 1,
-#     'disable_existing_loggers': False,
-#     'handlers': {
-#         'file': {
-#             'level': 'DEBUG',
-#             'class': 'logging.FileHandler',
-#             'filename': BASE_DIR / 'debug.log',
-#         },
-#     },
-#     'root': {
-#         'handlers': ['file'],
-#         'level': 'DEBUG',
-#     },
-# }
+
