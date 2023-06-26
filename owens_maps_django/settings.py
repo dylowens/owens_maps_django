@@ -86,29 +86,29 @@ WSGI_APPLICATION = 'owens_maps_django.wsgi.application'
 
 
 # Production database
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'owensmaps',
-        'USER': 'admin',
-        'PASSWORD': 'adminpassword',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
-
-
-# # Local database
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-#         'NAME': 'db.sqlite3',                      # Or path to database file if using sqlite3.
-#         'USER': '',                      # Not used with sqlite3.
-#         'PASSWORD': '',                  # Not used with sqlite3.
-#         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-#         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'owensmaps',
+#         'USER': 'admin',
+#         'PASSWORD': 'adminpassword',
+#         'HOST': 'localhost',
+#         'PORT': '',
 #     }
 # }
+
+
+# Local database
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'db.sqlite3',                      # Or path to database file if using sqlite3.
+        'USER': '',                      # Not used with sqlite3.
+        'PASSWORD': '',                  # Not used with sqlite3.
+        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+    }
+}
 
 
 # Password validation
@@ -174,12 +174,12 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # USE IN PRODUCTION
-GDAL_LIBRARY_PATH = '/usr/lib/libgdal.so'
+# GDAL_LIBRARY_PATH = '/usr/lib/libgdal.so'
 # GEOS_LIBRARY_PATH = '-L/usr/lib/x86_64-linux-gnu -lgeos-3.7.1'
 
 #owensmac local paths FOR DEVELOPMENT
-# GDAL_LIBRARY_PATH = '/opt/homebrew/opt/gdal/lib/libgdal.dylib'
-# GEOS_LIBRARY_PATH = '/opt/homebrew/opt/geos/lib/libgeos_c.dylib'
+GDAL_LIBRARY_PATH = '/opt/homebrew/opt/gdal/lib/libgdal.dylib'
+GEOS_LIBRARY_PATH = '/opt/homebrew/opt/geos/lib/libgeos_c.dylib'
 
 
 CORS_ALLOW_ALL_ORIGINS = True
